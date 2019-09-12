@@ -22,9 +22,27 @@ woohooSound = minim.loadSample("homer-woohoo.wav");     //In setup. Change the f
 
 }
 
-void draw(){
+void draw(){ 
+  
+  if(mousePressed && !gameover){
+  gameover = true;
+  tailx = mouseX;
+  taily = mouseY;
+  println(tailx + " " +taily + " ");
+ }
+  
   if(gameover){
   background (donkey);
+  image(tail, tailx, taily);
+    println(dist(678,121,tailx,taily));
+  if (dist(678,121,tailx,taily) < 41) {
+    println(" sound");
+    if(playSound){
+    
+     woohooSound.trigger();
+     playSound = false;
+    }
+}
   }
   else{
     if(dist(0, 0, mouseX, mouseY) > 30){
@@ -33,20 +51,11 @@ void draw(){
     else{
       background(donkey);
     }
-  }
- if(gameover = true){   
+    
 image(tail, mouseX, mouseY);
 rect(0, 0, 30, 30);
 rect(676, 119, 40, 40);
- }
- if(mousePressed){
-  gameover = true;
- }
-   
-  
-if (playSound) {
-     woohooSound.trigger();
-     playSound = false;
+
 }
+
  }
- 

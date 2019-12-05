@@ -13,8 +13,13 @@ public static void main(String[] args) {
 	String pi = "3.14159265358979323846264338327";
 for( int i=0; i< pi.length(); i++) {
 	System.out.println(pi.charAt(i));
-}
-}
+	speak (pi.charAt(i));
+}//end for loop
+
+
+
+
+}//main method
 	// 2. Make a String variable to hold the value of Pi. You could use https://www.piday.org/million/  for the value.
 
 	// 3. Print out some digits of Pi. The first value is "pi.charAt(0)", the second is "pi.charAt(1)"

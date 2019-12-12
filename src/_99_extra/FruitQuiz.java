@@ -10,20 +10,25 @@ import java.awt.event.KeyEvent;
 import javax.swing.JApplet;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class FruitQuiz extends KeyAdapter {
 
 	void makeQuestions() {
 		question1 = new JLabel("<html>Which is not a real fruit? <br> A: Dragon Fruit <br> B: Durian <br> C: Crazyberry</html>");
 		// 11. Make another question called "question2".  Use question1 above as a guide.
+	question2 = new JLabel("<html> Which Apollo 11 crew member did not walk on the moon? <br> A: Michael Jackson <br> B: Steve Jobs <br> C: Thomas Jefferson <br> D: Michael Collins</html>");
 	}
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		int keyCode = arg0.getKeyCode();
 		// 1. Print out the key code variable
-
+System.out.println(keyCode);
 		// 2. Make 3 int variables that hold the key codes for A, b, and C
+		int a = 65;
+		int b = 66;
+		int c = 67;
 		
 		// 14. Repeat steps 11, 12, and 13 for question3 and question4 - IMPORTANT: The questions must be in reverse order from top to bottom to work properly
 		
@@ -34,11 +39,16 @@ public class FruitQuiz extends KeyAdapter {
 			
 		if (question1.isShowing()) {
 			// 3. If they selected the right fruit, do steps 4 and 7
-			
+		if(keyCode==67) {
+			JOptionPane.showMessageDialog(null, "That is correct!");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "That's incorrect, the answer is C: Crazyberry");
+		}
 				// 4. Call the correct() method
-				
+				correct();
 				// 7. Use the nextQuestion() method to go to question2
-			
+				nextQuestion(JLabel newQuestion);
 			
 			// 8. else (if they touched something else)
 				
